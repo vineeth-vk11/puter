@@ -110,8 +110,8 @@ async function UIWindowPublishWebsite(target_dir_uid, target_dir_name, target_di
                 update_sites_cache();
             }).catch((err)=>{
                 $(el_window).find('.publish-website-error-msg').html(
-                    err.message + (
-                        err.code === 'subdomain_limit_reached' ? 
+                    err.error.message + (
+                        err.error.code === 'subdomain_limit_reached' ? 
                             ' <span class="manage-your-websites-link">Manage Your Subdomains</span>' : ''
                     )
                 );
